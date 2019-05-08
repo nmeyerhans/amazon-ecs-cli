@@ -2,10 +2,10 @@
 #export DH_VERBOSE = 1
 
 # Variables used for constructing a local GOPATH during build
-WORKING_GOPATH=$(PWD)/.gopath
+WORKING_GOPATH=$(CURDIR)/.gopath
 ORG_DIR=$(WORKING_GOPATH)/src/github.com/aws
 BUILD_DIR=$(ORG_DIR)/amazon-ecs-cli
-export GOCACHE=$(PWD)/.gocache
+export GOCACHE=$(CURDIR)/.gocache
 
 %:
 	dh $@
@@ -13,7 +13,7 @@ export GOCACHE=$(PWD)/.gocache
 # Construct the local GOPATH
 override_dh_auto_configure:
 	mkdir -p $(ORG_DIR)
-	ln -s $(PWD) $(BUILD_DIR)
+	ln -s $(CURDIR) $(BUILD_DIR)
 
 override_dh_auto_build:
 	cd $(BUILD_DIR) && GOPATH=$(WORKING_GOPATH) $(MAKE) -C $(BUILD_DIR) $(BUILD_TARGET)
