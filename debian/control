@@ -1,0 +1,20 @@
+Source: amazon-ecs-cli
+Section: admin
+Priority: optional
+Maintainer: Noah Meyerhans <nmeyerha@amazon.com>
+Build-Depends: debhelper (>= 10), golang-go, golang-src
+Standards-Version: 4.1.2
+Homepage: https://github.com/aws/amazon-ecs-cli/
+
+Package: amazon-ecs-cli
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: command line tool for Amazon Elastic Container Service
+ The Amazon ECS Command Line Interface (CLI) is a command line tool
+ for Amazon Elastic Container Service (Amazon ECS) that provides
+ high-level commands to simplify creating, updating, and monitoring
+ clusters and tasks from a local development environment. The Amazon
+ ECS CLI supports Docker Compose, a popular open-source tool for
+ defining and running multi-container applications. Use the CLI as
+ part of your everyday development and testing cycle as an alternative
+ to the AWS Management Console or the AWS CLI.

@@ -1,0 +1,9 @@
+amazon-ecs-cli for Debian
+------------------------
+
+The Debianized source contains the full set of vendored dependencies,
+making it currently unsuitable for inclusion in Debian proper.
+
+
+ -- Noah Meyerhans <nmeyerha@amazon.com>  Wed, 08 May 2019 10:39:34 -0700
+

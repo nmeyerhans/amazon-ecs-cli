@@ -1,0 +1,5 @@
+amazon-ecs-cli (1.14.1-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Noah Meyerhans <nmeyerha@amazon.com>  Wed, 08 May 2019 10:39:34 -0700
