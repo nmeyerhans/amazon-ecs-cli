@@ -1,0 +1,13 @@
+Index: amazon-ecs-cli/Makefile
+===================================================================
+--- amazon-ecs-cli.orig/Makefile
++++ amazon-ecs-cli/Makefile
+@@ -33,7 +33,7 @@ $(LOCAL_BINARY): $(SOURCES)
+ 
+ .PHONY: test
+ test:
+-	env -i PATH=$$PATH GOPATH=$$GOPATH GOROOT=$$GOROOT GOCACHE=$$GOCACHE go test -timeout=120s -v -cover ./ecs-cli/modules/...
++	env -i PATH=$$PATH GOPATH=$$GOPATH GOROOT=$$GOROOT GOCACHE=$$GOCACHE go test -timeout=120s -v -cover $(shell go list ./ecs-cli/...)
+ 
+ 
+ .PHONY: integ-test

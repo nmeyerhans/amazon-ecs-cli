@@ -16,8 +16,11 @@ override_dh_auto_configure:
 	ln -s $(PWD) $(BUILD_DIR)
 
 override_dh_auto_build:
-	cd $(BUILD_DIR) && GOPATH=$(WORKING_GOPATH) make -C $(BUILD_DIR) $(BUILD_TARGET)
+	cd $(BUILD_DIR) && GOPATH=$(WORKING_GOPATH) $(MAKE) -C $(BUILD_DIR) $(BUILD_TARGET)
 
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf $(WORKING_GOPATH) $(GOCACHE)
+
+override_dh_auto_test:
+	cd $(BUILD_DIR) && GOPATH=$(WORKING_GOPATH) $(MAKE) test
